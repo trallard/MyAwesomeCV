@@ -1,0 +1,119 @@
+%----------------------------------------------------------------------------------------
+%	SECTION TITLE
+%----------------------------------------------------------------------------------------
+
+\cvsection{Professional activities}
+
+%----------------------------------------------------------------------------------------
+%	SECTION CONTENT
+%----------------------------------------------------------------------------------------
+
+\begin{cvhonors}
+
+\cvhonor
+{Open source mentor} % Position
+{Mozilla Open Leaders} % Committee
+{ UK} % Location
+{2018} % Date(s)
+
+%-----------------------------------------------
+\cvhonor
+{Core committee member} % Position
+{RForwards} % Committee
+{ UK} % Location
+{2017-18} % Date(s)
+
+%-----------------------------------------------
+\cvhonor
+{Diversity chair} % Position
+{Juliacon} % Committee
+{London, UK} % Location
+{2017-18} % Date(s)
+
+%------------------------------------------------
+
+\cvhonor
+{Project lead} % Position
+{Mozilla Open Leaders} % Committee
+{Sheffield, UK} % Location
+{2017} % Date(s)
+
+%------------------------------------------------
+\cvhonor
+{Elected member} % Position
+{UK Research software engineering committee} % Committee
+{Sheffield, UK} % Location
+{2017-18} % Date(s)
+
+%------------------------------------------------
+\cvhonor
+{Data scholar} % Position
+{Data study workshop: Alan Turing Institute} % Committee
+{London, UK} % Location
+{2017} % Date(s)
+
+
+%------------------------------------------------
+\cvhonor
+{Diversity and equality chair} % Position
+{2nd Research Software Engineering Conference} % Committee
+{Manchester, UK} % Location
+{2017} % Date(s)
+
+%------------------------------------------------
+
+\cvhonor
+{Diversity and equality committee member} % Position
+{Computer Science, University of Sheffield} % Committee
+{Sheffield, UK} % Location
+{2016-18} % Date(s)
+
+%------------------------------------------------
+
+\cvhonor
+{Lead Python Instructor} % Position
+{Code First Girls} % Committee
+{Sheffield,UK} % Location
+{2017-18} % Date(s)
+
+%------------------------------------------------
+
+\cvhonor
+{Talks co-chair} % Position
+{2nd Research Software Engineering Conference} % Committee
+{ Manchester, UK} % Location
+{2017} % Date(s)
+    
+%------------------------------------------------
+
+\cvhonor
+{Supporting organiser} % Position
+{Nanoprinting conference} % Committee
+{Manchester, UK} % Location
+{2016} % Date(s)
+
+%------------------------------------------------
+
+\cvhonor
+{Cultural affair officer}
+{Manchester Mexican Society}
+{Manchester, UK}
+{2015}
+
+\cvhonor
+{Cultural affairs officer}
+{Mexican Society in the UK}
+{UK}
+{2014}
+
+%------------------------------------------------
+
+\cvhonor
+{Volunteer} % Position
+{Manchester Girl Geeks, The British Science Association, Coding Dojo} % Committee
+{Manchester, UK} % Location
+{2013-17} % Date(s)
+
+%------------------------------------------------
+
+\end{cvhonors}
