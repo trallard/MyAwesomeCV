@@ -241,3 +241,6 @@ TSWLatexianTemp*
 
 # standalone packages
 *.sta
+
+
+__latexindent_temp.tex
