@@ -94,7 +94,6 @@
   pdfkeywords={}
 }
 
-
 \RequirePackage{etaremune}
 % Needed to  reverse enumerate
 
