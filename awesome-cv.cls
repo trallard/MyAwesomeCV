@@ -634,7 +634,7 @@
 }{%
   \end{itemize}
   \end{justify}
-  \vspace{-2mm}
+  \vspace{2mm}
 }
 
 
