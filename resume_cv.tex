@@ -60,31 +60,35 @@
 \homepage{www.trallard.dev}
 \github{trallard}
 \linkedin{taniaallard}
-%\skype{skypeid}
-%\stackoverflow{SOid}{SOname}
 \twitter{@ixek}
 
-\position{MLOPs and MLOps expert 
-{\enskip\cdotp\enskip} GDE - Machine Learning \& AI{\enskip\cdotp\enskip} OSS maintainer and community leader} % Your expertise/fields
-%\position{Research Software Engineer{\enskip\cdotp\enskip}Finite Element Analysis and Computational modelling
-%expert}
-\quote{Seasoned Engineering Director and technical leader with over 15 years of experience architecting, developing, and delivering large-scale, production-ready machine learning solutions and open-source software and infrastructure. \\ 
-Open source leader, PSF fellow and director, Jupyter Distinguished Contributor, and PyLadies global council member.
-}
+% expertise and fields
+\position{Seasoned strategic leader {\enskip\cdotp\enskip} Machine Learning and MLOps Expert {\enskip\cdotp\enskip}
+Open Source Leader}
 
-\makecvfooter{\today}{Tania Allard~~~·~~~CV}{\thepage} % Specify the letter footer with 3 arguments: (<left>, <center>, <right>), leave any of these blank if they are not needed
+% quote to add at the top of the CV
+% \quote{Seasoned Engineering Director and technical leader with over 15 years of experience architecting, developing, and delivering large-scale, production-ready machine learning solutions and open-source software and infrastructure. \\ 
+% Open source leader, PSF fellow and director, Jupyter Distinguished Contributor, and PyLadies global council member.
+% }
+
+% Specify the letter footer with 3 arguments: (<left>, <center>, <right>), leave any of these blank if they are not needed
+\makecvfooter
+    {\today}
+    {Tania Allard~~~·~~~CV}
+    {\thepage} 
 
 %----------------------------------------------------------------------------------------
-
 \begin{document}
 
-\makecvheader % Print the header
+% Print the header with the personal information
+\makecvheader
 
 %----------------------------------------------------------------------------------------
 %	CV/RESUME CONTENT
 %	Each section is imported separately, open each file in turn to modify content
 %----------------------------------------------------------------------------------------
 
+\input{cv-sections/summary.tex}
 \input{cv-sections/experience.tex}
 \newpage
 \input{cv-sections/education.tex}
