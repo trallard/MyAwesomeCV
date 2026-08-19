@@ -495,6 +495,8 @@
   \end{center}%
 }
 
+
+%-------------------------------------------------------------------------------
 % Define a footer for CV
 % Usage: \makecvfooter{<left>}{<center>}{<right>}
 \newcommand*{\makecvfooter}[3]{%
@@ -504,6 +506,8 @@
   \fancyfoot[R]{\footerstyle{#3}} 
 }
 
+
+%-------------------------------------------------------------------------------
 % Define a section for CV
 % Usage: \cvsection{<section-title>}
 \newcommand{\cvsection}[1]{%
@@ -514,6 +518,8 @@
   \par\nobreak\addvspace{1ex}
 }
 
+
+%-------------------------------------------------------------------------------
 % Define a subsection for CV
 % Usage: \cvsubsection{<subsection-title>}
 \newcommand{\cvsubsection}[1]{%
@@ -521,6 +527,8 @@
   \subsectionstyle{#1}
 }
 
+
+%-------------------------------------------------------------------------------
 % Define a paragraph for CV
 \newenvironment{cvparagraph}{%
   \vspace{-3mm}
@@ -530,6 +538,7 @@
 }
 
 
+%-------------------------------------------------------------------------------
 % Define an environment for cventry
 \newenvironment{cventries}{%
   \begin{center}
@@ -550,6 +559,8 @@
   \end{tabular*}
 }
 
+
+%-------------------------------------------------------------------------------
 % Define an environment for cvsubentry
 \newenvironment{cvsubentries}{%
   \begin{center}
@@ -574,6 +585,8 @@
   \end{tabular*}
 }
 
+
+%-------------------------------------------------------------------------------
 % Define an environment for cvhonor
 \newenvironment{cvhonors}{%
   \begin{center}
@@ -591,7 +604,7 @@
 }
 
 %-----------------------------------------------------------
-% Define an environment for cvhonor
+% Define an environment for cvpresentations
 \newenvironment{cvpresentations}{%
   \begin{center}
     \setlength\tabcolsep{0pt}
@@ -608,6 +621,8 @@
 }
 %------------------------------------------------------------
 
+
+%-------------------------------------------------------------------------------
 % Define an environment for cvskill
 \newenvironment{cvskills}{%
   \begin{center}
@@ -624,6 +639,8 @@
 	\skilltypestyle{#1} & \skillsetstyle{#2} \\
 }
 
+
+%-------------------------------------------------------------------------------
 % Define an environment for cvitems(for cventry)
 \newenvironment{cvitems}{%
   \vspace{-4mm}
@@ -638,6 +655,7 @@
 }
 
 
+%-------------------------------------------------------------------------------
 % Define an environment for cvenum(for cventry)
 \newenvironment{cvenum}{
   \vspace{-4mm}
@@ -652,6 +670,7 @@
 }
 
 
+%-------------------------------------------------------------------------------
 % Define an environment for cvpub
 \newenvironment{cvpubs}{
   \begin{center}
@@ -682,6 +701,7 @@
 }
 
 
+%-------------------------------------------------------------------------------
 % Define an environment for cvlist(for cventry)
 \newenvironment{cvlist}{
   \vspace{-4mm}
@@ -696,6 +716,7 @@
 }
 
 
+%-------------------------------------------------------------------------------
 % Define an environment for cvpres
 \newenvironment{cvpress}{
   \begin{center}
@@ -706,6 +727,8 @@
     \end{tabular*}
   \end{center}
 }
+
+%-------------------------------------------------------------------------------
 % Define a line of cv information(honor, award or something else)
 % Usage: \cvpres{<title>}{<location>}{<date>}
 \newcommand*{\cvpres}[3]{
@@ -714,7 +737,7 @@
 }
 
 
-
+%-------------------------------------------------------------------------------
 % Define an environment for cvobs
 \newenvironment{cvobss}{
   \begin{center}
