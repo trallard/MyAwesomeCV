@@ -244,3 +244,8 @@ TSWLatexianTemp*
 
 
 __latexindent_temp.tex
+## Build output
+build/
+
+## Private planning notes (this repository is public)
+todos/
