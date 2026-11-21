@@ -1,4 +1,4 @@
-.PHONY: cvs devrel stem research clean
+.PHONY: cvs devrel stem research letter clean
 
 BUILD_DIR = build
 OUT_DIR = cv-pdfs
@@ -21,6 +21,12 @@ $(OUT_DIR)/Tania_Allard_CV_%.pdf:
 	@mkdir -p $(OUT_DIR)
 	cp $(BUILD_DIR)/Tania_Allard_CV_$*.pdf $@
 	@grep -a 'Output written' $(BUILD_DIR)/Tania_Allard_CV_$*.log | tail -1
+
+# Cover letter: content from letters/letter.tex (git-ignored), else letters/example.tex
+letter:
+	$(LATEXMK) -g -jobname=Tania_Allard_Cover_Letter cover-letter.tex
+	cp $(BUILD_DIR)/Tania_Allard_Cover_Letter.pdf letters/
+	@grep -a 'Output written' $(BUILD_DIR)/Tania_Allard_Cover_Letter.log | tail -1
 
 clean:
 	rm -rf $(BUILD_DIR)

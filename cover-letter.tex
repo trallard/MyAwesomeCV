@@ -1,0 +1,28 @@
+%-------------------------------------------------------------------------------
+% Cover letter frame. Shares the header and contact details with the CVs.
+% Build with: make letter  ->  letters/Tania_Allard_Cover_Letter.pdf
+%
+% The letter's content (recipient, title, body) lives in letters/letter.tex,
+% which git ignores so applications stay private. If that file doesn't exist,
+% the tracked example letters/example.tex is used instead.
+%-------------------------------------------------------------------------------
+\input{cv-common.tex}
+
+\makecvfooter{}{Tania Allard~~~·~~~Cover Letter}{}
+\letterdate{\today}
+\letterclosing{Yours sincerely,}
+
+\IfFileExists{letters/letter.tex}
+  {\input{letters/letter.tex}}
+  {\input{letters/example.tex}}
+
+\begin{document}
+\makecvheader
+\makelettertitle
+
+\begin{cvletter}
+\letterbody
+\end{cvletter}
+
+\makeletterclosing
+\end{document}

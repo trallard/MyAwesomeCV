@@ -17,14 +17,24 @@ Requires a TeX distribution with XeLaTeX and `latexmk` (for example MacTeX or Te
 ```bash
 make cvs        # build all three variants
 make devrel     # or build one: devrel, stem, research
+make letter     # build the cover letter (see below)
 make clean      # remove the build/ folder
 ```
 
 PDFs are written to `cv-pdfs/`, and `make` prints the page count for each build. Every variant should stay at **two pages**: cut words rather than shrinking the type.
 
+## Cover letter
+
+`cover-letter.tex` is the frame: it shares the header and contact details with the CVs. The letter's content (recipient, title, opening and body) lives in a separate file:
+
+1. Copy `letters/example.tex` to `letters/letter.tex` and edit it.
+2. Run `make letter`. The PDF is written to `letters/Tania_Allard_Cover_Letter.pdf`.
+
+Everything in `letters/` except `example.tex` is ignored by git, so letters for specific applications never end up in this public repository. Without a `letters/letter.tex`, `make letter` builds the example.
+
 ## Where the content lives
 
-```
+```text
 cv-common.tex          layout, colours, contact details, footer (all variants)
 cv-devrel.tex          headline and section order for each variant
 cv-stem.tex
@@ -39,6 +49,8 @@ cv-sections/
   stem/                summary, experience (STEM; experience also used by Research)
   research/            summary (Research only)
 cv-pdfs/               built PDFs, plus older archived CVs
+cover-letter.tex       cover letter frame
+letters/               letter content; only example.tex is tracked
 ```
 
 ## Making changes

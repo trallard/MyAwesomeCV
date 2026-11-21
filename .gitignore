@@ -249,3 +249,7 @@ build/
 
 ## Private planning notes (this repository is public)
 todos/
+
+## Private cover letters: only the example is tracked
+letters/*
+!letters/example.tex
