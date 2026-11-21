@@ -1,114 +1,61 @@
-<h1 align="center">
-  <a href="https://github.com/posquit0/Awesome-CV" title="AwesomeCV Documentation">
-    <img alt="AwesomeCV" src="https://github.com/posquit0/Awesome-CV/raw/master/icon.png" width="200px" height="200px" />
-  </a>
-  <br />
-  Awesome CV
-</h1>
+# Tania Allard — CV
 
-<p align="center">
-  LaTeX template for your outstanding job application
-</p>
+LaTeX source for my CV, built on the [Awesome CV](https://github.com/posquit0/Awesome-CV) template.
 
-<div align="center">
-  <a href="https://www.paypal.me/posquit0">
-    <img alt="Donate" src="https://img.shields.io/badge/Donate-PayPal-blue.svg" />
-  </a>
-  <a href="https://circleci.com/gh/posquit0/Awesome-CV">
-    <img alt="CircleCI" src="https://circleci.com/gh/posquit0/Awesome-CV.svg?style=shield" />
-  </a>
-  <a href="https://raw.githubusercontent.com/posquit0/Awesome-CV/master/examples/resume.pdf">
-    <img alt="Example Resume" src="https://img.shields.io/badge/resume-pdf-green.svg" />
-  </a>
-  <a href="https://raw.githubusercontent.com/posquit0/Awesome-CV/master/examples/cv.pdf">
-    <img alt="Example CV" src="https://img.shields.io/badge/cv-pdf-green.svg" />
-  </a>
-  <a href="https://raw.githubusercontent.com/posquit0/Awesome-CV/master/examples/coverletter.pdf">
-    <img alt="Example Coverletter" src="https://img.shields.io/badge/coverletter-pdf-green.svg" />
-  </a>
-</div>
+The CV comes in three variants that share most of their content:
 
-<br />
+| Variant | Focus | Main file | Output |
+| --- | --- | --- | --- |
+| DevRel | Leadership-forward: communities, advocacy, ecosystem growth | `cv-devrel.tex` | `cv-pdfs/Tania_Allard_CV_DevRel.pdf` |
+| STEM | Builder-forward: scientific computing and research tools | `cv-stem.tex` | `cv-pdfs/Tania_Allard_CV_STEM.pdf` |
+| Research | Research-forward: PhD and technical leadership first | `cv-research.tex` | `cv-pdfs/Tania_Allard_CV_Research.pdf` |
 
-## What is Awesome CV?
+## Building
 
-**Awesome CV** is LaTeX template for a **CV(Curriculum Vitae)**, **Résumé** or **Cover Letter** inspired by [Fancy CV](https://www.sharelatex.com/templates/cv-or-resume/fancy-cv). It is easy to customize your own template, especially since it is really written by a clean, semantic markup.
-
-
-## Donate
-
-Please help keep this project alive! Donations are welcome and will go towards further development of this project.
-
-    PayPal: paypal.me/posquit0
-    BTC: 1Je3DxJVM2a9nTVPNo55SfQwpmxA6N2KKb
-    BCH: 1Mg1wG7PwHGrHYSWS67TsGSjo5GHEVbF16
-    ETH: 0x77ED9B4659F80205E9B9C9FB1E26EDB9904AFCC7
-    QTUM: QZT7D6m3QtTTqp7s4ZWAwLtGDsoHMMaM8E
-
-*Thank you for your support!*
-
-## Preview
-
-#### Résumé
-
-You can see [PDF](https://raw.githubusercontent.com/posquit0/Awesome-CV/master/examples/resume.pdf)
-
-| Page. 1 | Page. 2 |
-|:---:|:---:|
-| [![Résumé](https://raw.githubusercontent.com/posquit0/Awesome-CV/master/examples/resume-0.png)](https://raw.githubusercontent.com/posquit0/Awesome-CV/master/examples/resume.pdf)  | [![Résumé](https://raw.githubusercontent.com/posquit0/Awesome-CV/master/examples/resume-1.png)](https://raw.githubusercontent.com/posquit0/Awesome-CV/master/examples/resume.pdf) |
-
-#### Cover Letter
-
-You can see [PDF](https://raw.githubusercontent.com/posquit0/Awesome-CV/master/examples/coverletter.pdf)
-
-| Without Sections | With Sections |
-|:---:|:---:|
-| [![Cover Letter(Traditional)](https://raw.githubusercontent.com/posquit0/Awesome-CV/master/examples/coverletter-0.png)](https://raw.githubusercontent.com/posquit0/Awesome-CV/master/examples/coverletter.pdf)  | [![Cover Letter(Awesome)](https://raw.githubusercontent.com/posquit0/Awesome-CV/master/examples/coverletter-1.png)](https://raw.githubusercontent.com/posquit0/Awesome-CV/master/examples/coverletter.pdf) |
-
-
-## Quick Start
-
-* [**Edit Résumé on OverLeaf.com**](https://www.overleaf.com/latex/templates/awesome-cv/tvmzpvdjfqxp)
-* [**Edit Résumé on ShareLaTeX.com**](https://www.sharelatex.com/templates/cv-or-resume/awesome-cv)
-* [**Edit Cover Letter on OverLeaf.com**](https://www.overleaf.com/latex/templates/awesome-cv-cover-letter/pfzzjspkthbk)
-* [**Edit Cover Letter on ShareLaTeX.com**](https://www.sharelatex.com/templates/cover-letters/awesome-cv-cover-letter)
-
-**_Note:_ Above services do not guarantee up-to-date source code of Awesome CV**
-
-
-## How to Use
-
-#### Requirements
-
-A full TeX distribution is assumed.  [Various distributions for different operating systems (Windows, Mac, \*nix) are available](http://tex.stackexchange.com/q/55437) but TeX Live is recommended.
-You can [install TeX from upstream](http://tex.stackexchange.com/q/1092) (recommended; most up-to-date) or use `sudo apt-get install texlive-full` if you really want that.  (It's generally a few years behind.)
-
-#### Usage
-
-At a command prompt, run
+Requires a TeX distribution with XeLaTeX and `latexmk` (for example MacTeX or TeX Live).
 
 ```bash
-$ xelatex {your-cv}.tex
+make cvs        # build all three variants
+make devrel     # or build one: devrel, stem, research
+make clean      # remove the build/ folder
 ```
 
-This should result in the creation of ``{your-cv}.pdf``
+PDFs are written to `cv-pdfs/`, and `make` prints the page count for each build. Every variant should stay at **two pages**: cut words rather than shrinking the type.
 
+## Where the content lives
+
+```
+cv-common.tex          layout, colours, contact details, footer (all variants)
+cv-devrel.tex          headline and section order for each variant
+cv-stem.tex
+cv-research.tex
+cv-sections/
+  shared/              identical in every variant
+    oss.tex              Open Source
+    education.tex        Education
+    skills.tex           Technical Skills
+    experience-*.tex     Hello Soda, Consultant and USC entries
+  devrel/              summary, speaking, experience (DevRel only)
+  stem/                summary, experience (STEM; experience also used by Research)
+  research/            summary (Research only)
+cv-pdfs/               built PDFs, plus older archived CVs
+```
+
+## Making changes
+
+- **A fact that appears in every CV** (download figures, governance roles, education, skills, older jobs): edit the file in `cv-sections/shared/` once, then run `make cvs`.
+- **Wording that differs between variants** (summary, the CEO, Director, Microsoft and Sheffield entries): edit that variant's file in `cv-sections/<variant>/`. If the same fact changes, update it in `devrel/experience.tex` and `stem/experience.tex`.
+- **Research variant**: reuses `stem/experience.tex`. Give it its own `research/experience.tex` only if its wording needs to diverge.
+- **Headline under the name**: the `\position{...}` line in each main file.
+- **Contact details or layout**: `cv-common.tex`.
+- **Adding a variant**: copy a main file (for example `cv-stem.tex`), add a folder under `cv-sections/`, and add a target to the `Makefile`.
+
+## Writing style
+
+British English; first-person summary; present tense for current roles and past tense for earlier ones; evidence (project, people, number) before adjectives; only figures that can be defended in an interview.
 
 ## Credit
 
-[**LaTeX**](http://www.latex-project.org) is a fantastic typesetting program that a lot of people use these days, especially the math and computer science people in academia.
+Template: [Awesome CV](https://github.com/posquit0/Awesome-CV) by Claud D. Park, licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Fonts: [Roboto](https://github.com/google/roboto), [Source Sans Pro](https://github.com/adobe-fonts/source-sans-pro) and [FontAwesome](https://github.com/furl/latex-fontawesome).
 
-[**LaTeX FontAwesome**](https://github.com/furl/latex-fontawesome) is bindings for FontAwesome icons to be used in XeLaTeX.
-
-[**Roboto**](https://github.com/google/roboto) is the default font on Android and ChromeOS, and the recommended font for Google’s visual language, Material Design.
-
-[**Source Sans Pro**](https://github.com/adobe-fonts/source-sans-pro) is a set of OpenType fonts that have been designed to work well in user interface (UI) environments.
-
-
-## Contact
-
-You are free to take my `.tex` file and modify it to create your own resume. Please don't use my resume for anything else without my permission, though!
-
-If you have any questions, feel free to join me at [`#posquit0` on Freenode](irc://irc.freenode.net/posquit0) and ask away. Click [here](https://kiwiirc.com/client/irc.freenode.net/posquit0) to connect.
-
-Good luck!
+Please don't reuse my CV content without permission.
