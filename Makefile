@@ -20,7 +20,7 @@ $(OUT_DIR)/Tania_Allard_CV_%.pdf:
 	$(LATEXMK) -jobname=Tania_Allard_CV_$* cv-$(shell echo $* | tr A-Z a-z).tex
 	@mkdir -p $(OUT_DIR)
 	cp $(BUILD_DIR)/Tania_Allard_CV_$*.pdf $@
-	@grep -a 'Pages' $(BUILD_DIR)/Tania_Allard_CV_$*.log | tail -1
+	@grep -a 'Output written' $(BUILD_DIR)/Tania_Allard_CV_$*.log | tail -1
 
 clean:
 	rm -rf $(BUILD_DIR)
