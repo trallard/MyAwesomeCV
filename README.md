@@ -7,7 +7,7 @@ Since I wear a lot of hats 🎩 the CV comes in three variants that share most o
 | Variant | Focus | Main file | Output |
 | --- | --- | --- | --- |
 | DevRel | Community/leadership-forward: communities, advocacy, ecosystem growth | `cv-devrel.tex` | `cv-pdfs/Tania_Allard_CV_DevRel.pdf` |
-| STEM | Builder-forward: scientific computing and research tools | `cv-stem.tex` | `cv-pdfs/Tania_Allard_CV_STEM.pdf` |
+| SWE | Builder-forward: software engineering, scientific computing and research tools | `cv-swe.tex` | `cv-pdfs/Tania_Allard_CV_SWE.pdf` |
 | Research | Research-forward: PhD and technical leadership first | `cv-research.tex` | `cv-pdfs/Tania_Allard_CV_Research.pdf` |
 
 ## Building
@@ -16,7 +16,7 @@ Requires a TeX distribution with XeLaTeX and `latexmk` (for example MacTeX or Te
 
 ```bash
 make cvs        # build all three variants
-make devrel     # or build one: devrel, stem, research
+make devrel     # or build one: devrel, swe, research
 make letter     # build the cover letter (see below)
 make clean      # remove the build/ folder
 ```
@@ -37,7 +37,7 @@ Everything in `letters/` except `example.tex` is ignored by git, so letters for 
 ```text
 cv-common.tex          layout, colours, contact details, footer (all variants)
 cv-devrel.tex          headline and section order for each variant
-cv-stem.tex
+cv-swe.tex
 cv-research.tex
 cv-sections/
   shared/              identical in every variant
@@ -46,7 +46,7 @@ cv-sections/
     skills.tex           Technical Skills
     experience-*.tex     Hello Soda, Consultant and USC entries
   devrel/              summary, speaking, experience (DevRel only)
-  stem/                summary, experience (STEM; experience also used by Research)
+  swe/                 summary, experience (SWE; experience also used by Research)
   research/            summary (Research only)
 cv-pdfs/               built PDFs, plus older archived CVs
 cover-letter.tex       cover letter frame
@@ -56,11 +56,11 @@ letters/               letter content; only example.tex is tracked
 ## Making changes
 
 - **A fact that appears in every CV** (download figures, governance roles, education, skills, older jobs): edit the file in `cv-sections/shared/` once, then run `make cvs`.
-- **Wording that differs between variants** (summary, the CEO, Director, Microsoft and Sheffield entries): edit that variant's file in `cv-sections/<variant>/`. If the same fact changes, update it in `devrel/experience.tex` and `stem/experience.tex`.
-- **Research variant**: reuses `stem/experience.tex`. Give it its own `research/experience.tex` only if its wording needs to diverge.
+- **Wording that differs between variants** (summary, the CEO, Director, Microsoft and Sheffield entries): edit that variant's file in `cv-sections/<variant>/`. If the same fact changes, update it in `devrel/experience.tex` and `swe/experience.tex`.
+- **Research variant**: reuses `swe/experience.tex`. Give it its own `research/experience.tex` only if its wording needs to diverge.
 - **Headline under the name**: the `\position{...}` line in each main file.
 - **Contact details or layout**: `cv-common.tex`.
-- **Adding a variant**: copy a main file (for example `cv-stem.tex`), add a folder under `cv-sections/`, and add a target to the `Makefile`.
+- **Adding a variant**: copy a main file (for example `cv-swe.tex`), add a folder under `cv-sections/`, and add a target to the `Makefile`.
 
 ## Writing style
 
