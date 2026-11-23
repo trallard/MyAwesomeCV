@@ -1,0 +1,48 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+%-------------------------------------------------------------------------------
+% Shared preamble for every CV variant (cv-devrel.tex, cv-swe.tex,
+% cv-research.tex). Layout, colours, contact details and footer live here so
+% they only need changing once. Each variant sets its own \position line.
+%-------------------------------------------------------------------------------
+
+\documentclass[11pt, a4paper]{awesome-cv}
+
+\geometry{left=1.6cm, top=1.2cm, right=1.6cm, bottom=1.6cm, footskip=.5cm}
+
+\fontdir[fonts/]
+
+% Ultra violet highlight colour
+\colorlet{awesome}{awesome-darknight}
+\definecolor{awesome}{HTML}{5F4B8B}
+
+\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+
+%-------------------------------------------------------------------------------
+%	PERSONAL INFORMATION
+%-------------------------------------------------------------------------------
+\name{Tania R.}{Allard, PhD}
+\mobile{(+44) 79 400 30 706}
+\email{taniar.allard@gmail.com}
+\homepage{trallard.dev}
+\github{trallard}
+\linkedin{taniaallard}
+
+\makecvfooter
+  {\today}
+  {Tania Allard~~~·~~~CV}
+  {\thepage}
+
+% Tighter spacing after each entry's bullet list (the class default leaves a
+% large gap between entries). Spacing only; the type size is unchanged.
+\renewenvironment{cvitems}{%
+  \vspace{-4mm}
+  \begin{justify}
+  \begin{itemize}[leftmargin=2ex, nosep, noitemsep]
+    \setlength{\parskip}{0pt}
+    \renewcommand{\labelitemi}{\bullet}
+}{%
+  \end{itemize}
+  \end{justify}
+  \vspace{-4mm}
+}

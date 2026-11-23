@@ -1,25 +1,32 @@
-.PHONY: examples
+.PHONY: cvs devrel swe research letter clean
 
-CC = xelatex
-EXAMPLES_DIR = .
-RESUME_DIR = examples/resume
-CV_DIR = examples/cv
-RESUME_SRCS = $(shell find $(RESUME_DIR) -name '*.tex')
-CV_SRCS = $(shell find $(CV_DIR) -name '*.tex')
+BUILD_DIR = build
+OUT_DIR = cv-pdfs
+LATEXMK = latexmk -xelatex -interaction=nonstopmode -halt-on-error -outdir=$(BUILD_DIR)
 
-examples: $(foreach x, coverletter cv resume, $x.pdf)
+COMMON = cv-common.tex awesome-cv.cls $(wildcard cv-sections/shared/*.tex)
 
-resume.pdf: $(EXAMPLES_DIR)/resume_cv.tex $(RESUME_SRCS)
-	$(CC) -output-directory=$(EXAMPLES_DIR) $<
+cvs: devrel swe research
 
-cv.pdf: $(EXAMPLES_DIR)/cv.tex $(CV_SRCS)
-	$(CC) -output-directory=$(EXAMPLES_DIR) $<
+devrel: $(OUT_DIR)/Tania_Allard_CV_DevRel.pdf
+swe: $(OUT_DIR)/Tania_Allard_CV_SWE.pdf
+research: $(OUT_DIR)/Tania_Allard_CV_Research.pdf
 
-coverletter.pdf: $(EXAMPLES_DIR)/coverletter.tex
-	$(CC) -output-directory=$(EXAMPLES_DIR) $<
+$(OUT_DIR)/Tania_Allard_CV_DevRel.pdf: cv-devrel.tex $(COMMON) $(wildcard cv-sections/devrel/*.tex)
+$(OUT_DIR)/Tania_Allard_CV_SWE.pdf: cv-swe.tex $(COMMON) $(wildcard cv-sections/swe/*.tex)
+$(OUT_DIR)/Tania_Allard_CV_Research.pdf: cv-research.tex $(COMMON) $(wildcard cv-sections/research/*.tex) $(wildcard cv-sections/swe/*.tex)
 
-my_cv: ./resume_cv.tex $(RESUME_SRCS)
-	$(CC) -output-directory=. $<
+$(OUT_DIR)/Tania_Allard_CV_%.pdf:
+	$(LATEXMK) -jobname=Tania_Allard_CV_$* cv-$(shell echo $* | tr A-Z a-z).tex
+	@mkdir -p $(OUT_DIR)
+	cp $(BUILD_DIR)/Tania_Allard_CV_$*.pdf $@
+	@grep -a 'Output written' $(BUILD_DIR)/Tania_Allard_CV_$*.log | tail -1
+
+# Cover letter: content from letters/letter.tex (git-ignored), else letters/example.tex
+letter:
+	$(LATEXMK) -g -jobname=Tania_Allard_Cover_Letter cover-letter.tex
+	cp $(BUILD_DIR)/Tania_Allard_Cover_Letter.pdf letters/
+	@grep -a 'Output written' $(BUILD_DIR)/Tania_Allard_Cover_Letter.log | tail -1
 
 clean:
-	rm -rf $(EXAMPLES_DIR)/*.pdf
+	rm -rf $(BUILD_DIR)
