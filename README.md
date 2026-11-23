@@ -2,11 +2,11 @@
 
 LaTeX source for my CV, built on the [Awesome CV](https://github.com/posquit0/Awesome-CV) template.
 
-The CV comes in three variants that share most of their content:
+Since I wear a lot of hats 🎩 the CV comes in three variants that share most of their content:
 
 | Variant | Focus | Main file | Output |
 | --- | --- | --- | --- |
-| DevRel | Leadership-forward: communities, advocacy, ecosystem growth | `cv-devrel.tex` | `cv-pdfs/Tania_Allard_CV_DevRel.pdf` |
+| DevRel | Community/leadership-forward: communities, advocacy, ecosystem growth | `cv-devrel.tex` | `cv-pdfs/Tania_Allard_CV_DevRel.pdf` |
 | STEM | Builder-forward: scientific computing and research tools | `cv-stem.tex` | `cv-pdfs/Tania_Allard_CV_STEM.pdf` |
 | Research | Research-forward: PhD and technical leadership first | `cv-research.tex` | `cv-pdfs/Tania_Allard_CV_Research.pdf` |
 
